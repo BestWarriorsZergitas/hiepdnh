@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="40dp"
+        android:id="@+id/iv_bg"
+        android:src="@drawable/selector_yellow"
+        android:layout_height="40dp" />
+    <com.doannghesi.objects.TextViewDuepuntozero
+        android:layout_width="40dp"
+        android:text="M"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:id="@+id/tv_char"
+        android:layout_height="40dp" />
+</FrameLayout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/viewRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".luckyview.LuckyWheel2Activity">
+
+    <include layout="@layout/item_actionbar1"
+        android:id="@+id/action_bar"/>
+    <com.doannghesi.objects.TextViewDuepuntozero
+        android:layout_width="100dp"
+        android:id="@+id/tv_score"
+        android:layout_marginTop="5dp"
+        android:text="Coins: 10"
+        android:gravity="center_vertical|right"
+        android:textSize="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@+id/action_bar"
+        android:layout_alignParentRight="true"
+        android:textColor="@android:color/white"
+        android:layout_height="30dp" />
+
+    <FrameLayout
+        android:id="@+id/fr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <com.doannghesi.luckyview.LuckyWheelView
+            android:id="@+id/luckyWheel"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            app:lkwBackgroundColor="#FF9800"
+            app:lkwCenterImage="@drawable/wheel2"
+            app:lkwCursor="@drawable/ic_pin"
+            app:lkwTextColor="#263238" />
+
+        <cn.iwgang.countdownview.CountdownView
+            android:layout_width="350dp"
+            android:id="@+id/cd_view"
+            android:layout_height="350dp"
+            android:background="@drawable/bg_timer"
+            app:isShowHour="true"
+            android:visibility="gone"
+            app:isShowMinute="true"
+            app:isShowSecond="true"
+            app:timeTextColor="@android:color/white"
+            app:timeTextSize="35sp"
+            app:isTimeTextBold="true"
+            app:suffixGravity="bottom"
+            app:suffixTextColor="@android:color/white"
+            app:suffixTextSize="12sp"/>
+
+    </FrameLayout>
+
+
+    <com.doannghesi.objects.TextViewDuepuntozero
+        android:id="@+id/tv_lucky"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/play"
+        android:layout_centerHorizontal="true"
+        android:text="Bạn đã nhận được 10 coins"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/play"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/selector_next"
+        android:text="Quay"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+</RelativeLayout>
