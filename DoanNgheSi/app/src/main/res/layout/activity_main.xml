@@ -1,359 +1,395 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/viewRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:id="@+id/viewRoot"
     android:background="@drawable/background"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context="com.doannghesi.activities.MainActivity">
+    tools:context="com.doannghesi.activities.MainActivity"
+    android:weightSum="10">
 
-    <include
-        android:id="@+id/action_bar"
-        layout="@layout/item_actionbar1"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.75">
 
-    <com.doannghesi.objects.TextViewDuepuntozero
-        android:layout_width="@dimen/dp100"
-        android:id="@+id/tv_score"
-        android:layout_marginTop="@dimen/dp5"
-        android:text="Điểm: 10"
-        android:gravity="center_vertical|right"
-        android:textSize="20dp"
-        android:layout_marginRight="@dimen/dp20"
-        android:layout_below="@+id/action_bar"
-        android:layout_alignParentRight="true"
-        android:textColor="@android:color/white"
-        android:layout_height="@dimen/dp30" />
-    <com.doannghesi.objects.TextViewDuepuntozero
-        android:id="@+id/tv_percent"
-        android:layout_width="@dimen/dp120"
-        android:layout_height="@dimen/dp30"
-        android:textColor="@android:color/white"
-        android:text="Đã cào: 0,00%"
-        android:gravity="center_vertical"
-        android:textSize="20dp"
-        android:layout_below="@+id/action_bar"
-        android:layout_marginTop="@dimen/dp5"
-        android:layout_marginLeft="@dimen/dp20"
-        android:layout_alignParentLeft="true"/>
+        <include
+            android:id="@+id/action_bar"
+            layout="@layout/item_actionbar1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.75">
+
+        <com.doannghesi.objects.TextViewDuepuntozero
+            android:id="@+id/tv_score"
+            android:layout_width="@dimen/dp100"
+            android:layout_height="@dimen/dp30"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp20"
+            android:layout_marginTop="@dimen/dp5"
+            android:gravity="center_vertical|right"
+            android:text="Điểm: 10"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
+
+        <com.doannghesi.objects.TextViewDuepuntozero
+            android:id="@+id/tv_percent"
+            android:layout_width="@dimen/dp120"
+            android:layout_height="@dimen/dp30"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/dp20"
+            android:layout_marginTop="@dimen/dp5"
+            android:gravity="center_vertical"
+            android:text="Đã cào: 0,00%"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
+
+    </RelativeLayout>
 
     <FrameLayout
         android:id="@+id/fr_scratch"
-        android:layout_marginTop="@dimen/dp10"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="3.75"
         android:layout_below="@id/tv_percent"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_marginRight="@dimen/dp10">
 
         <ImageView
             android:id="@+id/iv_ket_qua"
-            android:layout_width="@dimen/dp280"
-            android:layout_height="@dimen/dp180"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:visibility="gone" />
 
         <com.doannghesi.objects.ScratchImageView
             android:id="@+id/scratch_view"
             android:layout_width="match_parent"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_height="@dimen/dp180"
+            android:layout_height="match_parent"
             android:background="@android:color/white"
             android:src="@mipmap/ic_launcher" />
     </FrameLayout>
 
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp75"
-        android:layout_marginTop="@dimen/dp15"
-        android:id="@+id/ln_dap_an"
-        android:layout_below="@id/fr_scratch"
+        android:layout_height="0dp"
+        android:layout_weight="1.75"
         android:orientation="vertical"
-        android:weightSum="2">
+        android:gravity="center">
 
         <LinearLayout
+            android:id="@+id/ln_dap_an"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_marginBottom="@dimen/dp2"
-            android:gravity="center"
-            android:weightSum="9">
+            android:layout_height="@dimen/dp110"
+            android:orientation="vertical"
+            android:weightSum="2">
 
-            <com.doannghesi.objects.TextViewDuepuntozero
-                android:id="@+id/tv_dap_an_1"
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/dp2"
                 android:layout_weight="1"
-                android:background="@drawable/button_blue"
                 android:gravity="center"
-                android:textColor="@android:color/white" />
+                android:weightSum="9">
 
-            <com.doannghesi.objects.TextViewDuepuntozero
-                android:id="@+id/tv_dap_an_2"
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-     
+                <com.doannghesi.objects.TextViewDuepuntozero
+                    android:id="@+id/tv_dap_an_1"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+
+                    android:layout_weight="1"
+                    android:background="@drawable/button_blue"
+                    android:gravity="center"
+                    android:textColor="@android:color/white" />
+
+                <com.doannghesi.objects.TextViewDuepuntozero
+                    android:id="@+id/tv_dap_an_2"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+
+                    android:layout_weight="1"
+                    android:background="@drawable/button_blue"
+                    android:gravity="center"
+                    android:textColor="@android:color/white" />
+
+                <com.doannghesi.objects.TextViewDuepuntozero
+                    android:id="@+id/tv_dap_an_3"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+
+                    android:layout_weight="1"
+                    android:background="@drawable/button_blue"
+                    android:gravity="center"
+                    android:textColor="@android:color/white" />
+
+                <com.doannghesi.objects.TextViewDuepuntozero
+                    android:id="@+id/tv_dap_an_4"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+
+                    android:layout_weight="1"
+                    android:background="@drawable/button_blue"
+                    android:gravity="center"
+                    android:textColor="@android:color/white" />
+
+                <com.doannghesi.objects.TextViewDuepuntozero
+                    android:id="@+id/tv_dap_an_5"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+
+                    android:layout_weight="1"
+                    android:background="@drawable/button_blue"
+                    android:gravity="center"
+                    android:textColor="@android:color/white" />
+
+                <com.doannghesi.objects.TextViewDuepuntozero
+                    android:id="@+id/tv_dap_an_6"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+
+                    android:layout_weight="1"
+                    android:background="@drawable/button_blue"
+                    android:gravity="center"
+                    android:textColor="@android:color/white" />
+
+                <com.doannghesi.objects.TextViewDuepuntozero
+                    android:id="@+id/tv_dap_an_7"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+
+                    android:layout_weight="1"
+                    android:background="@drawable/button_blue"
+                    android:gravity="center"
+                    android:textColor="@android:color/white" />
+
+                <com.doannghesi.objects.TextViewDuepuntozero
+                    android:id="@+id/tv_dap_an_8"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+
+                    android:layout_weight="1"
+                    android:background="@drawable/button_blue"
+                    android:gravity="center"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/dp2"
                 android:layout_weight="1"
-                android:background="@drawable/button_blue"
                 android:gravity="center"
-                android:textColor="@android:color/white" />
+                android:weightSum="9">
 
-            <com.doannghesi.objects.TextViewDuepuntozero
-                android:id="@+id/tv_dap_an_3"
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-     
-                android:layout_weight="1"
-                android:background="@drawable/button_blue"
-                android:gravity="center"
-                android:textColor="@android:color/white" />
+                <com.doannghesi.objects.TextViewDuepuntozero
+                    android:id="@+id/tv_dap_an_9"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
 
-            <com.doannghesi.objects.TextViewDuepuntozero
-                android:id="@+id/tv_dap_an_4"
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-     
-                android:layout_weight="1"
-                android:background="@drawable/button_blue"
-                android:gravity="center"
-                android:textColor="@android:color/white" />
+                    android:layout_weight="1"
+                    android:background="@drawable/button_blue"
+                    android:gravity="center"
+                    android:textColor="@android:color/white" />
 
-            <com.doannghesi.objects.TextViewDuepuntozero
-                android:id="@+id/tv_dap_an_5"
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-     
-                android:layout_weight="1"
-                android:background="@drawable/button_blue"
-                android:gravity="center"
-                android:textColor="@android:color/white" />
+                <com.doannghesi.objects.TextViewDuepuntozero
+                    android:id="@+id/tv_dap_an_10"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
 
-            <com.doannghesi.objects.TextViewDuepuntozero
-                android:id="@+id/tv_dap_an_6"
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-     
-                android:layout_weight="1"
-                android:background="@drawable/button_blue"
-                android:gravity="center"
-                android:textColor="@android:color/white" />
+                    android:layout_weight="1"
+                    android:background="@drawable/button_blue"
+                    android:gravity="center"
+                    android:textColor="@android:color/white" />
 
-            <com.doannghesi.objects.TextViewDuepuntozero
-                android:id="@+id/tv_dap_an_7"
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-     
-                android:layout_weight="1"
-                android:background="@drawable/button_blue"
-                android:gravity="center"
-                android:textColor="@android:color/white" />
+                <com.doannghesi.objects.TextViewDuepuntozero
+                    android:id="@+id/tv_dap_an_11"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
 
-            <com.doannghesi.objects.TextViewDuepuntozero
-                android:id="@+id/tv_dap_an_8"
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-     
-                android:layout_weight="1"
-                android:background="@drawable/button_blue"
-                android:gravity="center"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
+                    android:layout_weight="1"
+                    android:background="@drawable/button_blue"
+                    android:gravity="center"
+                    android:textColor="@android:color/white" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="@dimen/dp2"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:weightSum="9">
+                <com.doannghesi.objects.TextViewDuepuntozero
+                    android:id="@+id/tv_dap_an_12"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
 
-            <com.doannghesi.objects.TextViewDuepuntozero
-                android:id="@+id/tv_dap_an_9"
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_blue"
+                    android:gravity="center"
+                    android:textColor="@android:color/white" />
 
-                android:layout_weight="1"
-                android:background="@drawable/button_blue"
-                android:gravity="center"
-                android:textColor="@android:color/white" />
+                <com.doannghesi.objects.TextViewDuepuntozero
+                    android:id="@+id/tv_dap_an_13"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
 
-            <com.doannghesi.objects.TextViewDuepuntozero
-                android:id="@+id/tv_dap_an_10"
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_blue"
+                    android:gravity="center"
+                    android:textColor="@android:color/white" />
 
-                android:layout_weight="1"
-                android:background="@drawable/button_blue"
-                android:gravity="center"
-                android:textColor="@android:color/white" />
+                <com.doannghesi.objects.TextViewDuepuntozero
+                    android:id="@+id/tv_dap_an_14"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
 
-            <com.doannghesi.objects.TextViewDuepuntozero
-                android:id="@+id/tv_dap_an_11"
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_blue"
+                    android:gravity="center"
+                    android:textColor="@android:color/white" />
 
-                android:layout_weight="1"
-                android:background="@drawable/button_blue"
-                android:gravity="center"
-                android:textColor="@android:color/white" />
+                <com.doannghesi.objects.TextViewDuepuntozero
+                    android:id="@+id/tv_dap_an_15"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
 
-            <com.doannghesi.objects.TextViewDuepuntozero
-                android:id="@+id/tv_dap_an_12"
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_blue"
+                    android:gravity="center"
+                    android:textColor="@android:color/white" />
 
-                android:layout_weight="1"
-                android:background="@drawable/button_blue"
-                android:gravity="center"
-                android:textColor="@android:color/white" />
+                <com.doannghesi.objects.TextViewDuepuntozero
+                    android:id="@+id/tv_dap_an_16"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
 
-            <com.doannghesi.objects.TextViewDuepuntozero
-                android:id="@+id/tv_dap_an_13"
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_blue"
+                    android:gravity="center"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
 
-                android:layout_weight="1"
-                android:background="@drawable/button_blue"
-                android:gravity="center"
-                android:textColor="@android:color/white" />
-
-            <com.doannghesi.objects.TextViewDuepuntozero
-                android:id="@+id/tv_dap_an_14"
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-
-                android:layout_weight="1"
-                android:background="@drawable/button_blue"
-                android:gravity="center"
-                android:textColor="@android:color/white" />
-
-            <com.doannghesi.objects.TextViewDuepuntozero
-                android:id="@+id/tv_dap_an_15"
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-
-                android:layout_weight="1"
-                android:background="@drawable/button_blue"
-                android:gravity="center"
-                android:textColor="@android:color/white" />
-
-            <com.doannghesi.objects.TextViewDuepuntozero
-                android:id="@+id/tv_dap_an_16"
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-
-                android:layout_weight="1"
-                android:background="@drawable/button_blue"
-                android:gravity="center"
-                android:textColor="@android:color/white" />
         </LinearLayout>
 
     </LinearLayout>
 
-    <com.doannghesi.objects.MyGridView
-        android:id="@+id/grid_goi_y"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp100"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="@dimen/dp16"
-        android:numColumns="8"
-        android:verticalSpacing="@dimen/dp5">
+        android:layout_height="0dp"
+        android:layout_weight="0.5">
 
-    </com.doannghesi.objects.MyGridView>
+        <com.doannghesi.objects.TextViewDuepuntozero
+            android:id="@+id/tv_true_false"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp30"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="Bạn trả lời chính xác"
+            android:textColor="@android:color/white"
+            android:textSize="15dp"
+            android:visibility="gone" />
 
-    <LinearLayout
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp40"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/ln_dap_an"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:weightSum="6">
+        android:layout_height="0dp"
+        android:layout_weight="2.5">
 
-        <ImageView
-            android:id="@+id/iv_cao_lai"
-            android:layout_width="0dp"
-            android:src="@drawable/selector_cao_lai"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Cào lại"
-            android:textSize="10dp" />
+        <com.doannghesi.objects.MyGridView
+            android:id="@+id/grid_goi_y"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp100"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/dp16"
+            android:numColumns="8"
+            android:verticalSpacing="@dimen/dp5">
 
-        <ImageView
-            android:id="@+id/iv_mo_1_o_chu"
-            android:layout_width="0dp"
-            android:src="@drawable/selector_momoto"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Mở 1 ô chữ"
-            android:textSize="10dp" />
+        </com.doannghesi.objects.MyGridView>
 
-        <ImageView
-            android:id="@+id/iv_xem_huong_dan"
-            android:layout_width="0dp"
-            android:src="@drawable/selector_goi_y"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Xem hướng dẫn"
-            android:textSize="8dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp60"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="6">
 
-        <ImageView
-            android:id="@+id/iv_bo_qua"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/selector_bo_qua"
-            android:text="bỏ qua"
-            android:textSize="10dp" />
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/iv_cao_lai"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/selector_cao_lai"
+                android:text="Cào lại"
+                android:textSize="10dp" />
 
-    <com.doannghesi.objects.TextViewDuepuntozero
-        android:layout_width="wrap_content"
-        android:gravity="center"
-        android:id="@+id/tv_true_false"
-        android:textSize="15dp"
-        android:visibility="gone"
-        android:textColor="@android:color/white"
-        android:text="Bạn trả lời chính xác"
-        android:layout_height="@dimen/dp30"
-        android:layout_below="@+id/ln_dap_an"
-        android:layout_centerHorizontal="true" />
-    <com.doannghesi.objects.TextViewDuepuntozero
-        android:layout_width="wrap_content"
-        android:gravity="center"
-        android:textSize="25dp"
-        android:visibility="gone"
-        android:textStyle="bold"
-        android:id="@+id/tv_singer"
-        android:layout_below="@id/tv_true_false"
-        android:layout_centerHorizontal="true"
-        android:text="Sơn Tùng MTP"
-        android:textColor="#DE9850"
-        android:layout_height="@dimen/dp40" />
-    <com.doannghesi.objects.TextViewDuepuntozero
-        android:layout_width="wrap_content"
-        android:gravity="center"
-        android:visibility="gone"
-        android:id="@+id/tv_add_coins"
-        android:textSize="15dp"
-        android:textColor="@android:color/white"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/tv_singer"
-        android:text="Bạn được tặng +10 coins"
-        android:layout_height="@dimen/dp30" />
-    <com.doannghesi.objects.TextViewDuepuntozero
-        android:layout_width="100dp"
-        android:text="Next"
-        android:gravity="center"
-        android:id="@+id/tv_next"
-        android:visibility="gone"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:textColor="@android:color/white"
-        android:background="@drawable/selector_next"
-        android:layout_height="@dimen/dp60" />
+            <ImageView
+                android:id="@+id/iv_mo_1_o_chu"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/selector_momoto"
+                android:text="Mở 1 ô chữ"
+                android:textSize="10dp" />
+
+            <ImageView
+                android:id="@+id/iv_xem_huong_dan"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/selector_goi_y"
+                android:text="Xem hướng dẫn"
+                android:textSize="8dp" />
+
+            <ImageView
+                android:id="@+id/iv_bo_qua"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/selector_bo_qua"
+                android:text="bỏ qua"
+                android:textSize="10dp" />
+        </LinearLayout>
+
+        <com.doannghesi.objects.TextViewDuepuntozero
+            android:id="@+id/tv_singer"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp40"
+            android:layout_below="@id/tv_true_false"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="Sơn Tùng MTP"
+            android:textColor="#DE9850"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <com.doannghesi.objects.TextViewDuepuntozero
+            android:id="@+id/tv_add_coins"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp30"
+            android:layout_below="@+id/tv_singer"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="Bạn được tặng +10 coins"
+            android:textColor="@android:color/white"
+            android:textSize="15dp"
+            android:visibility="gone" />
+
+        <com.doannghesi.objects.TextViewDuepuntozero
+            android:id="@+id/tv_next"
+            android:layout_width="100dp"
+            android:layout_height="@dimen/dp60"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/selector_next"
+            android:gravity="center"
+            android:text="Next"
+            android:textColor="@android:color/white"
+            android:visibility="gone" />
+
+    </RelativeLayout>
 
 
-</RelativeLayout>
+</LinearLayout>
